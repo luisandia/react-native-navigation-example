@@ -4,7 +4,7 @@ import React from 'react';
 import { Button, Platform, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-// import TopBarNavigation from './TopBarNavigation';
+import TopBarNavigation from './TopBarNavigation';
 
 function Home() {
   return (
@@ -75,6 +75,7 @@ function MyTabs() {
       <Tab.Screen
         name="Contact"
         component={Contact}
+        // component={TopBarNavigation}
         options={{
           tabBarLabel: 'Contact',
           tabBarIcon: ({ color, size }) => (

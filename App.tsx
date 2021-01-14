@@ -4,13 +4,15 @@ import BottomTabNavigation from './navigators/BottomTabNavigation';
 import DrawerNavigation from './navigators/DrawerNavigation';
 import StackNavigation from './navigators/StackNavigation';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import TopBarNavigation from './navigators/TopBarNavigation';
 
 export default function App() {
   return (
     <SafeAreaProvider>
       {/* <DrawerNavigation /> */}
       {/* <BottomTabNavigation /> */}
-      <StackNavigation />
+      {/* <StackNavigation /> */}
+      <TopBarNavigation/>
     </SafeAreaProvider>
   );
 }

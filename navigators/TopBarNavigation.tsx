@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { Text, View, Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { useSafeArea } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import * as React from 'react';
+import { Button, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 function Home() {
   return (
@@ -19,7 +19,7 @@ function Home() {
   );
 }
 
-function Contact({ navigation }) {
+function Contact({ navigation }: any) {
   return (
     <View
       style={{
@@ -35,7 +35,7 @@ function Contact({ navigation }) {
   );
 }
 
-function About({ navigation }) {
+function About({ navigation }: any) {
   return (
     <View
       style={{
@@ -54,6 +54,7 @@ function About({ navigation }) {
 const Tab = createMaterialTopTabNavigator();
 
 function MyTabs() {
+  const insets = useSafeAreaInsets();
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -71,7 +72,7 @@ function MyTabs() {
 }
 export default function TopBarNavigation() {
   return (
-    // Remove in case of stack navigators !IMPORTANT
+    // Remove NavigationContainer tag in case you use it as part of BottomTabNavigation
     <NavigationContainer>
       <MyTabs />
     </NavigationContainer>
