@@ -10,9 +10,9 @@ export default function App() {
   return (
     <SafeAreaProvider>
       {/* <DrawerNavigation /> */}
-      {/* <BottomTabNavigation /> */}
+      <BottomTabNavigation />
       {/* <StackNavigation /> */}
-      <TopBarNavigation/>
+      {/* <TopBarNavigation/> */}
     </SafeAreaProvider>
   );
 }

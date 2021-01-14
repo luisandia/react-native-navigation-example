@@ -73,8 +73,8 @@ function MyTabs() {
 export default function TopBarNavigation() {
   return (
     // Remove NavigationContainer tag in case you use it as part of BottomTabNavigation
-    <NavigationContainer>
+    // <NavigationContainer>
       <MyTabs />
-    </NavigationContainer>
+    // </NavigationContainer>
   );
 }

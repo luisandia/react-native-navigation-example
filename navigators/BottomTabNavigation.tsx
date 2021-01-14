@@ -74,8 +74,8 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Contact"
-        component={Contact}
-        // component={TopBarNavigation}
+        // component={Contact}
+        component={TopBarNavigation}
         options={{
           tabBarLabel: 'Contact',
           tabBarIcon: ({ color, size }) => (
