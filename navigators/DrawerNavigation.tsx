@@ -1,18 +1,19 @@
-import React, { ReactElement } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
 import {
   createDrawerNavigator,
-  DrawerContentScrollView,
-  DrawerItemList,
-  DrawerItem,
   DrawerContentComponentProps,
-  DrawerNavigationProp,
+  DrawerContentScrollView,
+  DrawerItem,
+  DrawerItemList,
 } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import React, { ReactElement } from 'react';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import Home, { HomeRoute } from '../screens/Home';
-import Contact, { ContactRoute } from '../screens/Contact';
+import Icon from 'react-native-vector-icons/Ionicons';
 import About, { AboutParams, AboutRoute } from '../screens/About';
-import { NavigationContainer, NavigationState, RouteProp } from '@react-navigation/native';
+import Contact, { ContactRoute } from '../screens/Contact';
+import Home, { HomeRoute } from '../screens/Home';
+import BottomTabNavigation from './BottomTabNavigation';
 
 const CustomDrawerContent = (props: any) => {
   return (
@@ -23,13 +24,14 @@ const CustomDrawerContent = (props: any) => {
         </View>
       </View>
       <DrawerContentScrollView {...props}>
-        <DrawerItemList {...props}>
-          <DrawerItem
-            // icon={}
-            label="Close drawer"
-            onPress={() => props.navigation.closeDrawer()}
-          ></DrawerItem>
-        </DrawerItemList>
+        <DrawerItemList {...props} />
+        <DrawerItem
+          icon={() => (
+            <Icon name={Platform.OS === 'ios' ? 'ios-close' : 'md-close'} color="black" size={22} />
+          )}
+          label="Close drawer"
+          onPress={() => props.navigation.closeDrawer()}
+        ></DrawerItem>
       </DrawerContentScrollView>
     </ScrollView>
   );
@@ -40,7 +42,6 @@ export type DrawerParamList = {
   [ContactRoute]: { userId: string };
   [AboutRoute]: AboutParams | undefined;
 };
-type BlurredSuccessRouteProp = RouteProp<DrawerParamList, typeof AboutRoute>;
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 

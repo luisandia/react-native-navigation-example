@@ -1,8 +1,17 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { DrawerParamList } from '../navigators/DrawerNavigation';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
 
-const Header = ({ navigation, title }: any) => {
+type ProfileScreenNavigationProp = DrawerNavigationProp<DrawerParamList>;
+
+interface Props {
+  navigation: ProfileScreenNavigationProp;
+  title: string;
+}
+
+const Header: React.FC<Props> = ({ navigation, title }) => {
   const openMenu = () => {
     navigation.openDrawer();
   };

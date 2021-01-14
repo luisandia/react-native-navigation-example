@@ -13,10 +13,10 @@ export interface AboutParams {
 
 type ProfileScreenNavigationProp = DrawerNavigationProp<DrawerParamList, typeof AboutRoute>;
 
-type ProfileScreenRouteProp = RouteProp<DrawerParamList, typeof AboutRoute>;
+type AboutScreenRouteProp = RouteProp<DrawerParamList, typeof AboutRoute>;
 
 type Props = {
-  route: ProfileScreenRouteProp;
+  route: AboutScreenRouteProp;
   navigation: ProfileScreenNavigationProp;
 };
 
@@ -24,7 +24,7 @@ const About: React.FC<Props> = (props) => {
   const { route, navigation } = props;
   return (
     <View style={styles.container}>
-      <Header title="About" hasBackButton={true} navigation={navigation} />
+      <Header title="About" navigation={navigation} />
       <View style={styles.content}>
         <Text style={styles.text}>About is here!</Text>
         <Button title="Go back" onPress={() => navigation.goBack()} />

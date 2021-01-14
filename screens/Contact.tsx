@@ -15,7 +15,7 @@ interface Props {
 export default function Contact({ navigation }: any) {
   return (
     <View style={styles.container}>
-      <Header title="Contact" hasBackButton={true} navigation={navigation} />
+      <Header title="Contact" navigation={navigation} />
       <View style={styles.content}>
         <Text style={styles.text}>Contact is here!</Text>
         <Button title="Go back" onPress={() => navigation.goBack()} />
